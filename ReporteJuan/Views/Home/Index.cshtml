@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    <style>
+
+
+        iframe {
+            /* iframes are inline by default */
+            border: none; /* Reset default border */
+            height: 100vh;
+        }
+    </style>
+}
+
+
+
+<div class="row">
+    <div class="col-xs-4" style="margin-bottom:1%">
+        <h2>Yo soy tu papa <label style="color:deeppink">Juansito</label></h2>
+        @using (Html.BeginForm())
+        {
+
+
+
+            <div class="input-group">
+                <select class="form-control" name="ID">
+                    <option value="20" @if (ViewBag.IDRequest == 20) { <text> selected</text>}>Request #20</option>
+                    <option value="1020" @if (ViewBag.IDRequest == 1020) { <text> selected</text>}>Request #1020</option>
+                </select>
+                <span class="input-group-btn">
+                    <button type="submit" class="btn btn-primary">Cambiar</button>
+                </span>
+            </div>
+        }
+
+
+    </div>
+    <iframe src="~/Test.aspx?ID=@ViewBag.IDRequest" width="100%" frameborder="0" seamless="seamless"></frame>
+</div>
